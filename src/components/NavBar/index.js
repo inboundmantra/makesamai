@@ -44,11 +44,14 @@ class Navbar extends Component {
                             <Link className="navbar-item" to="/products">
                                 Products
                             </Link>
-                            <Link className="navbar-item" to="/blog">
-                                Blog
-                            </Link>
                             <Link className="navbar-item" to="/about">
                                 About
+                            </Link>
+                            <Link className="navbar-item" to="/pricing">
+                                Pricing
+                            </Link>
+                            <Link className="navbar-item" to="/blog">
+                                Blog
                             </Link>
                         </div>
                         <div className="navbar-end">
@@ -56,17 +59,8 @@ class Navbar extends Component {
                                 <div className="field is-grouped">
                                     <p className="control">
                                         <a
-                                            className="button is-outlined"
-                                            href="http://app.makesamai.com/signin/"
-                                            target="_blank"
-                                            rel="noopener noreferrer">
-                                            Sign In
-                                        </a>
-                                    </p>
-                                    <p className="control">
-                                        <a
                                             className="button is-info is-outlined"
-                                            href="http://app.makesamai.com/signup/"
+                                            href="http://app.makesamai.com/"
                                             target="_blank"
                                             rel="noopener noreferrer">
                                             Get Started
