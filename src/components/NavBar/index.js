@@ -7,7 +7,7 @@ import './style.css';
 import logo from '../../img/logo.svg'
 
 class Navbar extends Component {
-    componentWillMount() {
+    componentDidMount() {
         document.addEventListener('DOMContentLoaded', function () {
             let $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
             if ($navbarBurgers.length > 0) {
@@ -41,14 +41,14 @@ class Navbar extends Component {
                     </div>
                     <div className="navbar-menu" id="navMenu">
                         <div className="navbar-start">
-                            <Link className="navbar-item" to="/products">
-                                Products
-                            </Link>
-                            <Link className="navbar-item" to="/about">
-                                About
+                            <Link className="navbar-item" to="/product">
+                                Product
                             </Link>
                             <Link className="navbar-item" to="/pricing">
                                 Pricing
+                            </Link>
+                            <Link className="navbar-item" to="/about">
+                                About
                             </Link>
                             <Link className="navbar-item" to="/blog">
                                 Blog
