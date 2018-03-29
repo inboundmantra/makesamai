@@ -10,28 +10,29 @@ export const PricingPageTemplate = ({
                                         image,
                                         pricing,
                                     }) => (
-    <section className="section section--gradient">
-        <div className="container">
-            <div className="section">
-                <div className="columns">
-                    <div className="column is-10 is-offset-1">
-                        <div className="content">
-                            <div
-                                className="full-width-image-container margin-top-0"
-                                style={{backgroundImage: `url(${image})`}}
-                            >
-                                <h2
-                                    className="has-text-weight-bold is-size-1"
-                                    style={{
-                                        boxShadow: '0.5rem 0 0 #3273dc, -0.5rem 0 0 #3273dc',
-                                        backgroundColor: '#3273dc',
-                                        color: 'white',
-                                        padding: '1rem',
-                                    }}
-                                >
-                                    {title}
-                                </h2>
-                            </div>
+    <div>
+        <div
+            className="full-width-image-container margin-top-0"
+            style={{backgroundImage: `url(${image})`}}
+        >
+            <h2
+                className="has-text-weight-bold is-size-1"
+                style={{
+                    boxShadow: '0.5rem 0 0 #3273dc, -0.5rem 0 0 #3273dc',
+                    backgroundColor: '#3273dc',
+                    color: 'white',
+                    padding: '1rem',
+                }}
+            >
+                {title}
+            </h2>
+        </div>
+        <section className="section section--gradient">
+            <div className="container">
+                <div className="section">
+                    <div className="columns">
+                        <div className="column is-10 is-offset-1">
+                            <div className="content">
                                 <h2 className="has-text-weight-semibold is-size-2">
                                     {pricing.heading}
                                 </h2>
@@ -42,7 +43,8 @@ export const PricingPageTemplate = ({
                     </div>
                 </div>
             </div>
-    </section>
+        </section>
+    </div>
 )
 
 PricingPageTemplate.propTypes = {
@@ -55,8 +57,8 @@ PricingPageTemplate.propTypes = {
     }),
 }
 
-const PricingPage = ({ data }) => {
-    const { frontmatter } = data.markdownRemark
+const PricingPage = ({data}) => {
+    const {frontmatter} = data.markdownRemark
 
     return (
         <PricingPageTemplate
