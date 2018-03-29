@@ -40,9 +40,6 @@ class Navbar extends Component {
                 </div>
                 <div className="navbar-menu" id="navMenu">
                     <div className="navbar-start">
-                        <Link className="navbar-item" to="/product">
-                            Product
-                        </Link>
                         <Link className="navbar-item" to="/pricing">
                             Pricing
                         </Link>

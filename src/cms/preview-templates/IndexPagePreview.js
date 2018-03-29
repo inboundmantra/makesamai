@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ProductPageTemplate } from '../../templates/product-page'
+import { IndexPageTemplate } from '../../templates/index-page'
 
-const ProductPagePreview = ({ entry, getAsset }) => {
+const IndexPagePreview = ({ entry, getAsset }) => {
   const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
   const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
 
@@ -12,7 +12,7 @@ const ProductPagePreview = ({ entry, getAsset }) => {
   const entryPricingPlans = entry.getIn(['data', 'pricing', 'plans'])
 
   return (
-    <ProductPageTemplate
+    <IndexPageTemplate
       image={entry.getIn(['data', 'image'])}
       title={entry.getIn(['data', 'title'])}
       heading={entry.getIn(['data', 'heading'])}
@@ -40,11 +40,11 @@ const ProductPagePreview = ({ entry, getAsset }) => {
   )
 }
 
-ProductPagePreview.propTypes = {
+IndexPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default ProductPagePreview
+export default IndexPagePreview

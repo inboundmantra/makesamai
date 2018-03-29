@@ -1,6 +1,6 @@
 ---
-templateKey: 'product-page'
-path: /product
+templateKey: 'index-page'
+path: /
 title: Get Started With Superpowered Marketing
 image: /img/jumbotron.jpg
 heading: What we offer
