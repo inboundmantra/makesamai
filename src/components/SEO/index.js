@@ -79,7 +79,7 @@ const SE0 = ({title, meta_title, meta_desc, cover, slug}) => {
             />
             <meta name="twitter:title" content={title}/>
             <meta name="twitter:description" content={meta_desc}/>
-            <meta name="twitter:image" content={cover}/>
+            <meta name="twitter:image" content={image}/>
         </Helmet>
     )
 }
