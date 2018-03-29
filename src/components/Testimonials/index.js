@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 const Testimonials = ({ testimonials }) => (
   <div>
-    {testimonials.map(testimonial => (
-      <article className="message">
+    {testimonials.map((testimonial, id) => (
+      <article className="message" key={id}>
         <div className="message-body">
           {testimonial.quote}
           <br />
