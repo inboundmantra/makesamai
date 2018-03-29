@@ -10,7 +10,7 @@ module.exports = {
     siteDescription: "Get Started With Superpowered Marketing", // Website description used for RSS feeds/meta description tag.
     siteFBAppID: "", // FB Application ID for using app insights
     googleTagManagerID: "", // GTM tracking ID.
-    disqusShortname: "https-theleakycauldronblog-com", // Disqus shortname.
+    disqusShortname: "makesamai", // Disqus shortname.
     themeColor: "#3273dc", // Used for setting manifest and progress theme colors.
     backgroundColor: "#ffffff" // Used for setting manifest background color.
 };
