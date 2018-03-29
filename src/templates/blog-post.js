@@ -14,10 +14,53 @@ export const BlogPostTemplate = ({
                                      meta_desc,
                                      tags,
                                      title,
+                                     slug,
                                  }) => {
     const PostContent = contentComponent || Content
+    let postURL = config.siteUrl + slug
+    const realPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix
+    let image = config.siteUrl + realPrefix + cover
+    const blogURL = config.siteUrl + config.pathPrefix
+    const schemaOrgJSONLD = [
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            url: blogURL,
+            name: title,
+            alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
+        }
+    ];
 
-
+    schemaOrgJSONLD.push([
+        {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                {
+                    "@type": "ListItem",
+                    position: 1,
+                    item: {
+                        "@id": postURL,
+                        name: title,
+                        image
+                    }
+                }
+            ]
+        },
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            url: blogURL,
+            name: title,
+            alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+            headline: title,
+            image: {
+                "@type": "ImageObject",
+                url: image
+            },
+            meta_desc
+        }
+    ]);
 
     return (
         <section className="section">
@@ -26,6 +69,20 @@ export const BlogPostTemplate = ({
                 {/* General tags */}
                 <meta name="description" content={meta_desc}/>
                 <meta name="image" content={cover}/>
+                {/* Schema.org tags */}
+                <script type="application/ld+json">
+                    {JSON.stringify(schemaOrgJSONLD)}
+                </script>
+                {/* OpenGraph tags */}
+                <meta property="og:url" content={postURL}/>
+                <meta property="og:type" content="article"/>
+                <meta property="og:title" content={title}/>
+                <meta property="og:description" content={meta_desc}/>
+                <meta property="og:image" content={image}/>
+                <meta
+                    property="fb:app_id"
+                    content={config.siteFBAppID ? config.siteFBAppID : ""}
+                />
                 {/* Twitter Card tags */}
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta
@@ -70,11 +127,11 @@ BlogPostTemplate.propTypes = {
     meta_title: PropTypes.string,
     meta_desc: PropTypes.string,
     title: PropTypes.string,
+    slug: PropTypes.string,
 }
 
 const BlogPost = ({data}) => {
     const {markdownRemark: post} = data
-
     return (
         <BlogPostTemplate
             content={post.html}
@@ -84,6 +141,7 @@ const BlogPost = ({data}) => {
             meta_desc={post.frontmatter.meta_description}
             tags={post.frontmatter.tags}
             title={post.frontmatter.title}
+            slug={post.fields.slug}
         />
     )
 }
@@ -101,6 +159,9 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields {
+            slug
+          }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
