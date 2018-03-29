@@ -5,7 +5,7 @@ import {BlogPostTemplate} from '../../templates/blog-post'
 const BlogPostPreview = ({entry, widgetFor}) => (
     <BlogPostTemplate
         content={widgetFor('body')}
-        cover={entr.getIn(['data', 'cover'])}
+        cover={entry.getIn(['data', 'cover'])}
         meta_title={entry.getIn(['data', 'meta_title'])}
         meta_desc={entry.getIn(['data', 'meta_description'])}
         tags={entry.getIn(['data', 'tags'])}
