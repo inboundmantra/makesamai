@@ -11,6 +11,7 @@ module.exports = {
     siteFBAppID: "", // FB Application ID for using app insights
     googleTagManagerID: "", // GTM tracking ID.
     disqusShortname: "makesamai", // Disqus shortname.
+    userTwitter: "vaibhaved",
     themeColor: "#3273dc", // Used for setting manifest and progress theme colors.
     backgroundColor: "#ffffff" // Used for setting manifest background color.
 };

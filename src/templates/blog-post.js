@@ -4,27 +4,45 @@ import {kebabCase} from 'lodash'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import Content, {HTMLContent} from '../components/Content'
+import config from "../../data/config";
 
 export const BlogPostTemplate = ({
                                      content,
                                      contentComponent,
-                                     description,
+                                     cover,
+                                     meta_title,
+                                     meta_desc,
                                      tags,
                                      title,
-                                     helmet,
                                  }) => {
     const PostContent = contentComponent || Content
 
+
+
     return (
         <section className="section">
-            {helmet || ''}
+            <Helmet>
+                <title>{meta_title}</title>
+                {/* General tags */}
+                <meta name="description" content={meta_desc}/>
+                <meta name="image" content={cover}/>
+                {/* Twitter Card tags */}
+                <meta name="twitter:card" content="summary_large_image"/>
+                <meta
+                    name="twitter:creator"
+                    content={config.userTwitter ? config.userTwitter : ""}
+                />
+                <meta name="twitter:title" content={title}/>
+                <meta name="twitter:description" content={meta_desc}/>
+                <meta name="twitter:image" content={cover}/>
+            </Helmet>
             <div className="container content">
                 <div className="columns">
                     <div className="column is-10 is-offset-1">
                         <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
                             {title}
                         </h1>
-                        <p>{description}</p>
+                        <img src={cover} alt={title}/>
                         <PostContent content={content}/>
                         {tags && tags.length ? (
                             <div style={{marginTop: `4rem`}}>
@@ -48,9 +66,10 @@ export const BlogPostTemplate = ({
 BlogPostTemplate.propTypes = {
     content: PropTypes.string.isRequired,
     contentComponent: PropTypes.func,
-    description: PropTypes.string,
+    cover: PropTypes.string,
+    meta_title: PropTypes.string,
+    meta_desc: PropTypes.string,
     title: PropTypes.string,
-    helmet: PropTypes.instanceOf(Helmet),
 }
 
 const BlogPost = ({data}) => {
@@ -60,11 +79,11 @@ const BlogPost = ({data}) => {
         <BlogPostTemplate
             content={post.html}
             contentComponent={HTMLContent}
-            description={post.frontmatter.description}
-            helmet={<Helmet title={`${post.frontmatter.title} | Blog`}/>}
+            cover={post.frontmatter.cover}
+            meta_title={post.frontmatter.meta_title}
+            meta_desc={post.frontmatter.meta_description}
             tags={post.frontmatter.tags}
             title={post.frontmatter.title}
-            post={post}
         />
     )
 }
@@ -85,7 +104,9 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        description
+        cover
+        meta_title
+        meta_description
         tags
       }
     }
