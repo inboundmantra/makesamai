@@ -7,9 +7,31 @@ import './style.css';
 import logo from '../../img/logo.svg'
 
 class Navbar extends Component {
+    componentDidMount(){
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all "navbar-burger" elements
+            let $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+                // Add a click event on each of them
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+                        // Get the target from the "data-target" attribute
+                        let target = $el.dataset.target;
+                        let $target = document.getElementById(target);
+                        // Toggle the className on both the "navbar-burger" and the "navbar-menu"
+                        $el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+
+                    });
+                });
+            }
+        });
+    }
+
     render() {
         return (
-            <nav className="navbar" aria-label="main navigation">
+            <nav className="navbar is-fixed-top" aria-label="main navigation">
                 <div className="navbar-brand">
                     <Link to="/" className="navbar-item">
                         <figure className="image">
