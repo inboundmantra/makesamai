@@ -5,6 +5,7 @@ import favicon from '../img/favicon.ico'
 import Navbar from '../components/NavBar'
 import Footer from '../components/Footer'
 import './all.sass'
+import './navbar'
 import config from '../../data/config';
 
 const TemplateWrapper = ({children}) => (

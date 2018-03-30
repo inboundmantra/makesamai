@@ -7,24 +7,6 @@ import './style.css';
 import logo from '../../img/logo.svg'
 
 class Navbar extends Component {
-    constructor(props) {
-        super();
-        this.toggleBurger = this.toggleBurger.bind(this);
-    }
-
-    toggleBurger() {
-        let burger = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-        let menu = document.querySelector('.navbar-menu');
-        if (burger.length > 0) {
-            burger.forEach(function ($el) {
-                $el.addEventListener('click', function () {
-                    $el.classList.toggle('is-active');
-                    menu.classList.toggle('is-active');
-                });
-            });
-        }
-    }
-
     render() {
         return (
             <nav className="navbar" aria-label="main navigation">
@@ -34,7 +16,7 @@ class Navbar extends Component {
                             <img src={logo} alt="MakeSamai" style={{width: '109px', height: '24px'}}/>
                         </figure>
                     </Link>
-                    <button className="button navbar-burger" data-target="navMenu" onClick={this.toggleBurger}>
+                    <button className="button navbar-burger" data-target="navMenu">
                         <span/>
                         <span/>
                         <span/>
