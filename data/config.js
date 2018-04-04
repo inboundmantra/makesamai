@@ -9,7 +9,7 @@ module.exports = {
     pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
     siteDescription: "Get Started With Superpowered Marketing", // Website description used for RSS feeds/meta description tag.
     siteFBAppID: "", // FB Application ID for using app insights
-    googleTagManagerID: "", // GTM tracking ID.
+    googleTagManagerID: "GTM-TMR69Q5", // GTM tracking ID.
     disqusShortname: "makesamai", // Disqus shortname.
     userTwitter: "vaibhaved",
     themeColor: "#3273dc", // Used for setting manifest and progress theme colors.
