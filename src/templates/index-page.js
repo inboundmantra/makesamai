@@ -17,22 +17,25 @@ export const IndexPageTemplate = ({
                                       fullImage,
                                   }) => (
     <div>
-        <div
-            className="full-width-image-container margin-top-0"
-            style={{backgroundImage: `url(${image})`}}
-        >
-            <h2
-                className="has-text-weight-bold is-size-1"
-                style={{
-                    boxShadow: '0.5rem 0 0 #3273dc, -0.5rem 0 0 #3273dc',
-                    backgroundColor: '#3273dc',
-                    color: 'white',
-                    padding: '1rem',
-                }}
-            >
-                {title}
-            </h2>
-        </div>
+        <section className="hero is-medium is-bold">
+            <div className="hero-body">
+                <div className="container has-text-centered">
+                    <h1 className="title">
+                        {title}
+                    </h1>
+                    <a className="button is-primary" href="https://app.makesamai.com">Start 30 Day Free Trial</a>
+                </div>
+            </div>
+        </section>
+        <section className="hero is-primary">
+            <div className="hero-body">
+                <div className="container has-text-centered">
+                    <h1 className="title">
+                        Now Growth Teams can drive growth unhindered
+                    </h1>
+                </div>
+            </div>
+        </section>
         <section className="section section--gradient">
             <div className="container">
 
@@ -40,64 +43,60 @@ export const IndexPageTemplate = ({
                     <div className="columns">
                         <div className="column is-10 is-offset-1">
                             <div className="content">
-                                <div className="columns">
+                                <div className="columns is-centered">
                                     <div className="column is-7">
-                                        <h3 className="has-text-weight-semibold is-size-2">
+                                        <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
                                             {heading}
                                         </h3>
-                                        <p>{description}</p>
                                     </div>
                                 </div>
                                 <Features gridItems={intro.blurbs}/>
-                                <div className="columns">
+                                <div className="columns is-centered">
                                     <div className="column is-7">
-                                        <h3 className="has-text-weight-semibold is-size-3">
-                                            {main.heading}
+                                        <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
+                                            Invoke AI
                                         </h3>
-                                        <p>{main.description}</p>
                                     </div>
                                 </div>
-                                <div className="tile is-ancestor">
-                                    <div className="tile is-vertical">
-                                        <div className="tile">
-                                            <div className="tile is-parent is-vertical">
-                                                <article className="tile is-child">
-                                                    <img
-                                                        style={{borderRadius: '5px'}}
-                                                        src={main.image1.image}
-                                                        alt={main.image1.alt}
-                                                    />
-                                                </article>
-                                            </div>
-                                            <div className="tile is-parent">
-                                                <article className="tile is-child">
-                                                    <img
-                                                        style={{borderRadius: '5px'}}
-                                                        src={main.image2.image}
-                                                        alt={main.image2.alt}
-                                                    />
-                                                </article>
-                                            </div>
-                                        </div>
-                                        <div className="tile is-parent">
-                                            <article className="tile is-child">
-                                                <img
-                                                    style={{borderRadius: '5px'}}
-                                                    src={main.image3.image}
-                                                    alt={main.image3.alt}
-                                                />
-                                            </article>
-                                        </div>
+                                <div className="columns is-multiline">
+                                    <div className="column is-6">
+                                        <section className="section has-text-centered">
+                                            <p className="subtitle">Predictive Lead Intelligence</p>
+                                        </section>
+                                    </div>
+                                    <div className="column is-6">
+                                        <section className="section has-text-centered">
+                                            <p className="subtitle">Predict Keyword Ranks</p>
+                                        </section>
                                     </div>
                                 </div>
-                                <Testimonials testimonials={testimonials}/>
-                                <div
-                                    className="full-width-image-container"
-                                    style={{backgroundImage: `url(${fullImage})`}}
-                                />
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section className="hero is-primary">
+            <div className="hero-body">
+                <div className="container has-text-centered">
+                    <h1 className="title">
+                        Customer Logos
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <section className="hero is-bold">
+            <div className="hero-body">
+                <div className="container has-text-centered">
+                    <h1 className="title">
+                        Simple Pricing
+                    </h1>
+                    <br/>
+                    <h2 className="subtitle">US $10 / Month for 1000 Contacts</h2>
+                    <h1 className="subtitle">&#43;</h1>
+                    <h3 className="subtitle">US $10 / month for every additional 1,000 Contacts</h3>
+                    <a className="button is-primary" href="https://app.makesamai.com">Start 30 Day Free
+                        Trial</a>
                 </div>
             </div>
         </section>
