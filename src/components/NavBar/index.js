@@ -54,12 +54,22 @@ class Navbar extends Component {
                         </Link>
                     </div>
                     <div className="navbar-end">
+
                         <div className="navbar-item">
                             <div className="field is-grouped">
                                 <p className="control">
                                     <a
                                         className="button is-info is-outlined"
-                                        href="http://app.makesamai.com/"
+                                        href="http://app.makesamai.com/signin"
+                                        target="_blank"
+                                        rel="noopener noreferrer">
+                                        Sign In
+                                    </a>
+                                </p>
+                                <p className="control">
+                                    <a
+                                        className="button is-info is-outlined"
+                                        href="http://app.makesamai.com/signup"
                                         target="_blank"
                                         rel="noopener noreferrer">
                                         Get Started

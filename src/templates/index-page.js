@@ -23,7 +23,7 @@ export const IndexPageTemplate = ({
                     <h1 className="title">
                         {title}
                     </h1>
-                    <a className="button is-primary" href="https://app.makesamai.com">Start 30 Day Free Trial</a>
+                    <a className="button is-primary" href="https://app.makesamai.com/signup">Start 30 Day Free Trial</a>
                 </div>
             </div>
         </section>
@@ -95,7 +95,7 @@ export const IndexPageTemplate = ({
                     <h2 className="subtitle">US $10 / Month for 1000 Contacts</h2>
                     <h1 className="subtitle">&#43;</h1>
                     <h3 className="subtitle">US $10 / month for every additional 1,000 Contacts</h3>
-                    <a className="button is-primary" href="https://app.makesamai.com">Start 30 Day Free
+                    <a className="button is-primary" href="https://app.makesamai.com/signup">Start 30 Day Free
                         Trial</a>
                 </div>
             </div>
