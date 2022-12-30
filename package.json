@@ -5,7 +5,7 @@
   "author": "Vaibhav Sharma",
   "dependencies": {
     "bulma": "^0.6.0",
-    "gatsby": "^1.9.213",
+    "gatsby": "^5.3.3",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-google-tagmanager": "^1.0.17",
     "gatsby-plugin-manifest": "^1.0.15",
